@@ -1,0 +1,2 @@
+class SkiRun < ApplicationRecord
+end
