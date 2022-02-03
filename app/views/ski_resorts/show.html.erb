@@ -3,6 +3,12 @@
   <%= @ski_resort.name%>
   </h1>
   <h3>
-  <%= "Does it have backcountry access? #{@ski_resort.backcountry_access}"%>
+  <%="Number of lifts:#{@ski_resort.lifts}"%>
+  <p>Back-country access? <%= @ski_resort.backcountry_access%></p>
+  <p>Number of employees: <%=@ski_resort.employee%></p>
+  <p>Snowboarders permitted? <%=@ski_resort.snowboarder_permitted%></p>
+  <p>Altitude: <%=@ski_resort.altitude%></p>
+  <p>Average snow fall: <%=@ski_resort.avg_snowfall%></p>
+  <p>Location: <%=@ski_resort.location%></p>
   </h3>
 </div>
