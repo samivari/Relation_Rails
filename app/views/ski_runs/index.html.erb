@@ -1,12 +1,12 @@
 <h1>All Ski Runs</h1>
 <% @ski_runs.each do |ski_run| %>
-  <h4><%= ski_run.name %></h4>
+  <h4><%= ski_run.name.titleize %></h4>
   <ul>
-    <p> Is the run open? <%= ski_run.open %></p>
-    <p> Distance: <%= ski_run.distance %> miles</p>
-    <p> Is this a green? <%= ski_run.green %></p>
-    <p> Is this a blue? <%= ski_run.blue %></p>
-    <p> Is this a black? <%= ski_run.black %></p>
-    <p>Run condition: <%= ski_run.condition %></p>
+    <li> Is the run open? <%= ski_run.open %></li>
+    <li> Distance: <%= ski_run.distance %> miles</li>
+    <li> Is this a green? <%= ski_run.green %></li>
+    <li> Is this a blue? <%= ski_run.blue %></li>
+    <li> Is this a black? <%= ski_run.black %></li>
+    <li>Run condition: <%= ski_run.condition %></li>
   </ul>
 <% end %>
