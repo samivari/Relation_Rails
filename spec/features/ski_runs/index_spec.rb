@@ -1,7 +1,7 @@
 require 'rails_helper'
 
 RSpec.describe 'ski run index' do
-  it 'lists ski runs name and other attributes' do
+  it 'lists ski runs name and other attributes' do # user story 3
     keystone = SkiResort.create!(name: 'Keystone', lifts: 20, backcountry_access: true, employee: 30_000,
                                  snowboarder_permitted: true, altitude: 9280, avg_snowfall: 235, location: 'Summit County')
     schoolmarm = keystone.ski_runs.create!(name: 'schoolmarm', open: true, distance: 3, green: true, blue: false,

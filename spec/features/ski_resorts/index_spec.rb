@@ -1,7 +1,7 @@
 require 'rails_helper'
 
 RSpec.describe 'ski resort index' do
-  it 'shows all of the ski resorts' do
+  it 'shows all of the ski resorts' do # user story 1
     keystone = SkiResort.create!(name: 'Keystone', lifts: 20, backcountry_access: true, employee: 30_000,
                                  snowboarder_permitted: true, altitude: 9280, avg_snowfall: 235, location: 'Summit County')
     breck = SkiResort.create!(name: 'Breckinridge', lifts: 24, backcountry_access: false, employee: 23_000,
