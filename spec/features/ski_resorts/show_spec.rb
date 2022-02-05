@@ -29,7 +29,15 @@ RSpec.describe 'ski resort show' do
                                             black: true, condition: 'groomed')
 
     visit "/ski_resorts/#{keystone.id}"
-    save_and_open_page
+
     expect(page).to have_content(keystone.count_runs)
+  end
+
+  it 'has a link to all ski runs' do
+    keystone = SkiResort.create!(name: 'Keystone', lifts: 20, backcountry_access: true, employee: 30_000,
+                                 snowboarder_permitted: true, altitude: 9280, avg_snowfall: 235, location: 'Summit County')
+    visit "/ski_resorts/#{keystone.id}"
+    click_link 'All Ski Runs'
+    expect(current_path).to eq('/ski_runs')
   end
 end

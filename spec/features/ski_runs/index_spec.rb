@@ -19,4 +19,10 @@ RSpec.describe 'ski run index' do
     expect(page).to have_content(schoolmarm.black)
     expect(page).to have_content(schoolmarm.condition)
   end
+
+  it 'has a link to all ski runs' do
+    visit '/ski_runs'
+    click_link 'All Ski Runs'
+    expect(current_path).to eq('/ski_runs')
+  end
 end

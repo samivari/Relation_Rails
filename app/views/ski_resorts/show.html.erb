@@ -1,8 +1,10 @@
+<a href="/ski_runs"> All Ski Runs </a>
+
 <div>
   <h1>
   <%= @ski_resort.name%>
   </h1>
-  <h3>
+  <h4>
   <%="Number of lifts:#{@ski_resort.lifts}"%>
   <p>Back-country access? <%= @ski_resort.backcountry_access%></p>
   <p>Number of employees: <%=@ski_resort.employee%></p>
@@ -11,5 +13,5 @@
   <p>Average snow fall: <%=@ski_resort.avg_snowfall%></p>
   <p>Location: <%=@ski_resort.location%></p>
   <p>Ski Runs: <%=@ski_resort.count_runs %> </p>
-  </h3>
+  </h4>
 </div>

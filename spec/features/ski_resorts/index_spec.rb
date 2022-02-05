@@ -30,4 +30,10 @@ RSpec.describe 'ski resort index' do
 
     expect(breck.name).to appear_before(keystone.name)
   end
+
+  it 'has a link to all ski runs' do
+    visit '/ski_resorts'
+    click_link 'All Ski Runs'
+    expect(current_path).to eq('/ski_runs')
+  end
 end
