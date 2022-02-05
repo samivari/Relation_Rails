@@ -19,4 +19,17 @@ RSpec.describe 'ski resort show' do
     expect(page).to have_content(keystone.avg_snowfall)
     expect(page).to have_content(keystone.location)
   end
+
+  it 'shows the ski runs associated to the ski resort' do
+    keystone = SkiResort.create!(name: 'Keystone', lifts: 20, backcountry_access: true, employee: 30_000,
+                                 snowboarder_permitted: true, altitude: 9280, avg_snowfall: 235, location: 'Summit County')
+    schoolmarm = keystone.ski_runs.create!(name: 'schoolmarm', open: true, distance: 3, green: true, blue: false,
+                                           black: false, condition: 'groomed')
+    noodle_soup = keystone.ski_runs.create!(name: 'noodle soup', open: false, distance: 2, green: false, blue: false,
+                                            black: true, condition: 'groomed')
+
+    visit "/ski_resorts/#{keystone.id}"
+    save_and_open_page
+    expect(page).to have_content(keystone.count_runs)
+  end
 end

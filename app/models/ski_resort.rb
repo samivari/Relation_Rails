@@ -14,4 +14,8 @@ class SkiResort < ApplicationRecord
   def self.sorted
     SkiResort.order(created_at: :desc)
   end
+
+  def count_runs
+    SkiRun.where(ski_resort_id: id).count
+  end
 end
