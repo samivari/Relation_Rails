@@ -1,4 +1,7 @@
 <h1>ALL RESORTS</h1>
-<% @ski_resorts.each do |ski_resort| %>
-  <p><%= ski_resort.name %></p>
+<% @ski_resorts.sorted.each do |ski_resort| %>
+
+    <h3> <%= ski_resort.name %> </h3>
+    <p> Created at: <%= ski_resort.created_at %> </p>
+
 <% end %>

@@ -20,4 +20,14 @@ RSpec.describe 'ski resort index' do
     expect(page).to have_content(keystone.name)
     expect(page).to have_content(breck.name)
   end
+
+  it 'sorts the parent index by most recently created' do # user story 6
+    keystone = SkiResort.create!(name: 'Keystone', lifts: 20, backcountry_access: true, employee: 30_000,
+                                 snowboarder_permitted: true, altitude: 9280, avg_snowfall: 235, location: 'Summit County')
+    breck = SkiResort.create!(name: 'Breckinridge', lifts: 24, backcountry_access: false, employee: 23_000,
+                              snowboarder_permitted: true, altitude: 10_280, avg_snowfall: 333, location: 'Summit County')
+    visit '/ski_resorts'
+
+    expect(breck.name).to appear_before(keystone.name)
+  end
 end

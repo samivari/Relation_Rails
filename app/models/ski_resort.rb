@@ -10,4 +10,8 @@ class SkiResort < ApplicationRecord
 
   validates :backcountry_access, inclusion: [true, false]
   validates :snowboarder_permitted, inclusion: [true, false]
+
+  def self.sorted
+    SkiResort.order(created_at: :desc)
+  end
 end
