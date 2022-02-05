@@ -1,7 +1,7 @@
 
 <% @ski_runs.each do |ski_run| %>
 
-  <p> <%=  ski_run.name %> </p>
+  <p> <%=  ski_run.name.titleize %> </p>
   <li> Is the run open? <%= ski_run.open %></li>
   <li> Distance: <%= ski_run.distance %> miles</li>
   <li> Is this a green? <%= ski_run.green %></li>

@@ -36,4 +36,10 @@ RSpec.describe 'ski resort index' do
     click_link 'All Ski Runs'
     expect(current_path).to eq('/ski_runs')
   end
+
+  it 'has a link to all ski resorts' do
+    visit '/ski_runs'
+    click_link 'All Ski Resorts'
+    expect(current_path).to eq('/ski_resorts')
+  end
 end

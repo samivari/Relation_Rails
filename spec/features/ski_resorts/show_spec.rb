@@ -40,4 +40,12 @@ RSpec.describe 'ski resort show' do
     click_link 'All Ski Runs'
     expect(current_path).to eq('/ski_runs')
   end
+
+  it 'has a link to all ski resorts' do
+    keystone = SkiResort.create!(name: 'Keystone', lifts: 20, backcountry_access: true, employee: 30_000,
+                                 snowboarder_permitted: true, altitude: 9280, avg_snowfall: 235, location: 'Summit County')
+    visit "/ski_resorts/#{keystone.id}"
+    click_link 'All Ski Resorts'
+    expect(current_path).to eq('/ski_resorts')
+  end
 end
