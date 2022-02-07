@@ -1,4 +1,6 @@
 <h1>ALL RESORTS</h1>
+<%= link_to 'New Ski Resort', '/ski_resorts/new' %>
+
 <% @ski_resorts.sorted.each do |ski_resort| %>
 
     <h3> <%= ski_resort.name %> </h3>
