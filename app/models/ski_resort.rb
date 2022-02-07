@@ -1,5 +1,5 @@
 class SkiResort < ApplicationRecord
-  has_many :ski_runs
+  has_many :ski_runs, dependent: :destroy
 
   validates_presence_of :name,
                         :lifts,
@@ -12,7 +12,7 @@ class SkiResort < ApplicationRecord
   validates :snowboarder_permitted, inclusion: [true, false]
 
   def self.sorted
-    SkiResort.order(created_at: :desc)
+    order(created_at: :desc)
   end
 
   def count_runs

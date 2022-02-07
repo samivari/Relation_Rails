@@ -1,5 +1,6 @@
 
 <% @ski_runs.each do |ski_run| %>
+<div id="runs-<%= ski_run.id %>">
 
   <p> <%=  ski_run.name.titleize %> </p>
   <li> Is the run open? <%= ski_run.open %></li>
@@ -8,4 +9,5 @@
   <li> Is this a blue? <%= ski_run.blue %></li>
   <li> Is this a black? <%= ski_run.black %></li>
   <li>Run condition: <%= ski_run.condition %></li>
-<% end %>
+  <% end %>
+</div>

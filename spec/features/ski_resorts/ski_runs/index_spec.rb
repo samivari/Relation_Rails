@@ -11,8 +11,15 @@ RSpec.describe 'ski resorts ski runs index' do
 
     visit "/ski_resorts/#{keystone.id}/ski_runs"
 
-    expect(page).to have_content(schoolmarm.name.titleize)
-    expect(page).to have_content(noodle_soup.name.titleize)
+    within("#runs-#{schoolmarm.id}") do # with-in block tests
+      expect(page).to have_content(schoolmarm.name.titleize)
+      expect(page).to have_content(schoolmarm.open)
+      expect(page).to have_content(schoolmarm.distance)
+      expect(page).to have_content(schoolmarm.green)
+      expect(page).to have_content(schoolmarm.blue)
+      expect(page).to have_content(schoolmarm.black)
+      expect(page).to have_content(schoolmarm.condition)
+    end
   end
 
   it 'has a link to all ski runs' do
