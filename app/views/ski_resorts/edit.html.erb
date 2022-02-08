@@ -1,0 +1,5 @@
+<%= form_with url: "/ski_resorts/#{@ski_resort.id}", method: :patch, local: true do |form| %>
+<%= form.label :name %>
+<%= form.text_field :name %>
+<%= form.submit 'Update Ski Resort' %>
+<% end %>

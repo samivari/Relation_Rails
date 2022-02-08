@@ -18,4 +18,14 @@ class SkiResortsController < ApplicationController
     params.permit(:name, :lifts, :employee, :altitude, :avg_snowfall, :location, :backcountry_access,
                   :snowboarder_permitted)
   end
+
+  def edit
+    @ski_resort = SkiResort.find(params[:id])
+  end
+
+  def update
+    ski_resort = SkiResort.find(params[:id])
+    ski_resort.update(ski_resort_params)
+    redirect_to "/ski_resorts/#{ski_resort.id}"
+  end
 end
