@@ -1,4 +1,6 @@
 <%= link_to 'New Ski Run', "/ski_resorts/#{@ski_resort.id}/ski_runs/new" %>
+<%= link_to 'Order', "/ski_resorts/#{@ski_resort.id}/ski_runs?sort-by=name" %>
+
 <% @ski_runs.each do |ski_run| %>
 <div id="runs-<%= ski_run.id %>">
 

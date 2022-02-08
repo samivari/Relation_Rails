@@ -1,7 +1,14 @@
 class SkiResortRunsController < ApplicationController
   def index
+    # raise params.inspect if params['sort-by']
+
     @ski_resort = SkiResort.find(params[:ski_resort_id])
-    @ski_runs = @ski_resort.ski_runs
+    @ski_runs = if params['sort-by'] == 'name'
+                  # Sort by name
+                  @ski_resort.ski_runs.order('name')
+                else
+                  @ski_resort.ski_runs
+                end
   end
 
   def new

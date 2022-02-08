@@ -64,4 +64,20 @@ RSpec.describe 'ski resorts ski runs index' do
     expect(current_path).to eq("/ski_resorts/#{keystone.id}/ski_runs")
     expect(page).to have_content('Sunbeam')
   end
+
+  it 'has a link to order the ski runs in alphabetical order' do
+    breck = SkiResort.create!(name: 'Breckinridge', lifts: 24, backcountry_access: false, employee: 23_000,
+                              snowboarder_permitted: true, altitude: 10_280, avg_snowfall: 333, location: 'Summit County')
+    way_back = breck.ski_runs.create!(name: 'way back', open: true, distance: 1, green: false, blue: true,
+                                      black: false, condition: 'powder')
+    egg_nog = breck.ski_runs.create!(name: 'egg nog', open: true, distance: 4, green: true, blue: false, black: false,
+                                     condition: 'ice')
+
+    visit "/ski_resorts/#{breck.id}/ski_runs"
+
+    click_link 'Order'
+
+    expect(current_path).to eq("/ski_resorts/#{breck.id}/ski_runs")
+    expect(egg_nog.name.titleize).to appear_before(way_back.name.titleize)
+  end
 end
