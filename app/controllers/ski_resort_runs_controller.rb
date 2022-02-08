@@ -10,11 +10,11 @@ class SkiResortRunsController < ApplicationController
 
   def create
     ski_resort = SkiResort.find(params[:ski_resort_id])
-    ski_runs = ski_resort.ski_runs.create!(ski_resort_runs_params)
+    ski_runs = ski_resort.ski_runs.create!(ski_resort_run_params)
     redirect_to "/ski_resorts/#{ski_resort.id}/ski_runs"
   end
 
-  def ski_resort_runs_params
+  def ski_resort_run_params
     params.permit(:name, :open, :distance, :condition, :green, :blue, :black)
   end
 end

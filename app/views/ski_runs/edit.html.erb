@@ -1,0 +1,19 @@
+<%= form_with url: "/ski_runs/#{@ski_run.id}", method: :patch, local: true do |form| %>
+
+<p><%= form.label :name %>
+<%= form.text_field :name %></p>
+  <p><%= form.label :open %>
+  <%= form.text_field :open %></p>
+  <p><%= form.label :distance %> (miles)
+  <%= form.text_field :distance %></p>
+  <p><%= form.label :condition%>
+  <%= form.text_field :condition%></p>
+  <p><%= form.label :green %> (True or False)
+  <%= form.text_field :green %></p>
+  <p><%= form.label :blue %> (True or False)
+  <%= form.text_field :blue %></p>
+  <p><%= form.label :black %> (True or False)
+  <%= form.text_field :black %></p>
+  <p><%= form.submit 'Update Ski Run' %></p>
+
+<% end %>
