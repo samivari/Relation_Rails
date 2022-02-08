@@ -1,6 +1,6 @@
 class SkiRunsController < ApplicationController
   def index
-    @ski_runs = SkiRun.all
+    @ski_runs = SkiRun.is_open
   end
 
   def show

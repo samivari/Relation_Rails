@@ -9,4 +9,8 @@ class SkiRun < ApplicationRecord
   validates :green, inclusion: [true, false]
   validates :blue, inclusion: [true, false]
   validates :black, inclusion: [true, false]
+
+  def self.is_open
+    where(open: true)
+  end
 end
