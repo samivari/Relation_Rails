@@ -3,9 +3,10 @@ class SkiResortRunsController < ApplicationController
     # raise params.inspect if params['sort-by']
 
     @ski_resort = SkiResort.find(params[:ski_resort_id])
-    @ski_runs = if params['sort-by'] == 'name'
-                  # Sort by name
+    @ski_runs = if params['sort-by'] == 'name' # Sort by name
                   @ski_resort.ski_runs.order('name')
+                elsif params[:distance]
+                  @ski_resort.ski_runs.greater_than(params[:distance])
                 else
                   @ski_resort.ski_runs
                 end

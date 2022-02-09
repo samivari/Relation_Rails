@@ -13,4 +13,8 @@ class SkiRun < ApplicationRecord
   def self.is_open
     where(open: true)
   end
+
+  def self.greater_than(num)
+    where('distance > ?', num)
+  end
 end

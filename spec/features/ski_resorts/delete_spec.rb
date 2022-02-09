@@ -11,7 +11,6 @@ RSpec.describe 'delete' do
 
     click_link 'Delete'
 
-    save_and_open_page
     expect(current_path).to eq('/ski_resorts')
     expect(page).to_not have_content(keystone.name)
   end
