@@ -12,6 +12,7 @@ class SkiRunsController < ApplicationController
   end
 
   def update
+    ski_run_params
     ski_run = SkiRun.find(params[:id])
     ski_run.update(ski_run_params)
     redirect_to "/ski_runs/#{ski_run.id}"
@@ -20,6 +21,6 @@ class SkiRunsController < ApplicationController
   private
 
   def ski_run_params
-    params.permit(:name, :open, :distance, :condition, :green, :blue, :black)
+    params.require(:ski_run).permit(:name, :open, :distance, :condition, :green, :blue, :black)
   end
 end
