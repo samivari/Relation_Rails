@@ -1,0 +1,21 @@
+<%= form_with url: "/ski_resorts", method: :post, local: true, model: @ski_resort do |form| %>
+
+<p><%= form.label :name %>
+<%= form.text_field :name %></p>
+  <p><%= form.label :lifts %>
+  <%= form.text_field :lifts %></p>
+  <p><%= form.label :employee %>
+  <%= form.text_field :employee %></p>
+  <p><%= form.label :altitude %>
+  <%= form.text_field :altitude %></p>
+  <p><%= form.label :avg_snowfall %>
+  <%= form.text_field :avg_snowfall %></p>
+  <p><%= form.label :location %>
+  <%= form.text_field :location %></p>
+  <p><%= form.label :snowboarder_permitted %> (True or False)
+  <%= form.text_field :snowboarder_permitted %></p>
+  <p><%= form.label :backcountry_access %> (True or False)
+  <%= form.text_field :backcountry_access %></p>
+  <p><%= form.submit 'Add Ski Resort' %></p>
+
+<% end %>

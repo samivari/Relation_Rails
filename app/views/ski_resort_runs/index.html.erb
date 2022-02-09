@@ -1,0 +1,21 @@
+<%= link_to 'New Ski Run', "/ski_resorts/#{@ski_resort.id}/ski_runs/new" %>
+<p><%= link_to 'Order', "/ski_resorts/#{@ski_resort.id}/ski_runs?sort-by=name" %></p>
+
+<% @ski_runs.each do |ski_run| %>
+<div id="runs-<%= ski_run.id %>">
+  <h3> <%=  ski_run.name.titleize %> </h3>
+  <li> Is the run open? <%= ski_run.open %></li>
+  <li> Distance: <%= ski_run.distance %> miles</li>
+  <li> Is this a green? <%= ski_run.green %></li>
+  <li> Is this a blue? <%= ski_run.blue %></li>
+  <li> Is this a black? <%= ski_run.black %></li>
+  <li>Run condition: <%= ski_run.condition %></li>
+  <%= link_to "Delete #{ski_run.name}", "/ski_runs/#{ski_run.id}", method: :delete %>
+  <% end %>
+</div>
+
+<%= form_with url: "/ski_resorts/#{@ski_resort.id}/ski_runs", method: :get, local: true do |form| %>
+<p><%= form.label :distance, 'Ski runs with a distance greater than'%>
+<%= form.text_field :distance %></p>
+<p><%= form.submit 'Submit' %></p>
+<% end %>

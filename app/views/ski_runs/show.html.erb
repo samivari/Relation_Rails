@@ -1,0 +1,11 @@
+<h1><%= @ski_run.name.titleize %></h1>
+<p><%= link_to 'Update', "/ski_runs/#{@ski_run.id}/edit", method: :get %></p>
+<p><%= link_to 'Delete', "/ski_runs/#{@ski_run.id}", method: :delete %></p>
+<ul>
+  <li> Is the run open? <%= @ski_run.open %></li>
+  <li> Distance: <%= @ski_run.distance %> miles</li>
+  <li> Is this a green? <%= @ski_run.green %></li>
+  <li> Is this a blue? <%= @ski_run.blue %></li>
+  <li> Is this a black? <%= @ski_run.black %></li>
+  <li>Run condition: <%= @ski_run.condition %></li>
+</ul>

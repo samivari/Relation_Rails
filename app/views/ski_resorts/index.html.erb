@@ -1,0 +1,13 @@
+<h1>ALL RESORTS</h1>
+<%= link_to 'New Ski Resort', '/ski_resorts/new' %>
+
+<% @ski_resorts.sorted.each do |ski_resort| %>
+  <div id=ski-resort-<%= ski_resort.id %>>
+    <h3> <%= ski_resort.name %> </h3>
+    <ul>
+      <li> Created at: <%= ski_resort.created_at %> </li>
+      <li><%= link_to 'Update', "/ski_resorts/#{ski_resort.id}/edit" %></li>
+      <li><%= link_to 'Delete', "/ski_resorts/#{ski_resort.id}", method: :delete %></li>
+    </ul>
+  </div>
+<% end %>
