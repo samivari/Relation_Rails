@@ -11,14 +11,7 @@ RSpec.describe 'ski resort edit' do
 
     expect(current_path).to eq("/ski_resorts/#{keystone.id}/edit")
 
-    fill_in 'ski_resort_name', with: 'Keystone Resort'
-    fill_in 'ski_resort_lifts', with: '22'
-    fill_in 'ski_resort_employee', with: '2000'
-    fill_in 'ski_resort_altitude', with: '12_000'
-    fill_in 'ski_resort_avg_snowfall', with: '33'
-    fill_in 'ski_resort_location', with: 'Frisco'
-    fill_in 'ski_resort_backcountry_access', with: 'true'
-    fill_in 'ski_resort_snowboarder_permitted', with: 'true'
+    fill_in 'Name', with: 'Keystone Resort'
 
     click_on 'Update Ski Resort'
 
@@ -38,7 +31,7 @@ RSpec.describe 'ski resort edit' do
 
     expect(current_path).to eq("/ski_resorts/#{keystone.id}/edit")
 
-    fill_in 'ski_resort_name', with: 'Keystone Resort'
+    fill_in 'Name', with: 'Keystone Resort'
 
     click_on 'Update Ski Resort'
 

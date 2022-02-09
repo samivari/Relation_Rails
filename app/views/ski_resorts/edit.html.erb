@@ -1,5 +1,5 @@
 
-<%= form_for @ski_resort do |form| %>
+<%= form_with url: "/ski_resorts/#{@ski_resort.id}", method: :patch, local: true, model: @ski_resort do |form|%>
 
 <p><%= form.label :name %>
 <%= form.text_field :name %></p>

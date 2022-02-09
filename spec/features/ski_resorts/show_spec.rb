@@ -67,7 +67,7 @@ RSpec.describe 'ski resort show' do
 
     expect(current_path).to eq("/ski_resorts/#{keystone.id}/edit")
 
-    fill_in 'ski_resort_name', with: 'Keystone Resort'
+    fill_in 'Name', with: 'Keystone Resort'
 
     click_on 'Update Ski Resort'
 
