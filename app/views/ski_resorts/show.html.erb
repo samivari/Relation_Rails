@@ -2,8 +2,10 @@
   <h1>
   <%= @ski_resort.name %>
   </h1>
-   <%= link_to  "Ski Runs at #{@ski_resort.name} ", "/ski_resorts/#{@ski_resort.id}/ski_runs"   %>
+   <%= link_to  "Ski Runs at #{@ski_resort.name} ", "/ski_resorts/#{@ski_resort.id}/ski_runs" %>
     <p><%= link_to 'Update', "/ski_resorts/#{@ski_resort.id}/edit", method: :get %></p>
+    <p><%= link_to 'Delete', "/ski_resorts/#{@ski_resort.id}", method: :delete %></p>
+
   <h4>
   <%= "Number of lifts:#{@ski_resort.lifts}" %>
   <p>Back-country access? <%= @ski_resort.backcountry_access%></p>

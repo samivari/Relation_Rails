@@ -27,6 +27,11 @@ class SkiResortsController < ApplicationController
     redirect_to "/ski_resorts/#{ski_resort.id}"
   end
 
+  def destroy
+    SkiResort.destroy(params[:id])
+    redirect_to '/ski_resorts'
+  end
+
   private
 
   def ski_resort_params
