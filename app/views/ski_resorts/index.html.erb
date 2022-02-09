@@ -7,6 +7,7 @@
     <ul>
       <li> Created at: <%= ski_resort.created_at %> </li>
       <li><%= link_to 'Update', "/ski_resorts/#{ski_resort.id}/edit" %></li>
+      <li><%= link_to 'Delete', "/ski_resorts/#{ski_resort.id}", method: :delete %></li>
     </ul>
   </div>
 <% end %>
