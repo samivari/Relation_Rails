@@ -1,4 +1,4 @@
-<%= form_with url: "/ski_runs/#{@ski_run.id}", method: :patch, local: true do |form| %>
+<%= form_with url: "/ski_runs/#{@ski_run.id}", method: :patch, local: true, model: @ski_run do |form| %>
 
 <p><%= form.label :name %>
 <%= form.text_field :name %></p>

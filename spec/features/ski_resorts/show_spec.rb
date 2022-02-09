@@ -67,14 +67,7 @@ RSpec.describe 'ski resort show' do
 
     expect(current_path).to eq("/ski_resorts/#{keystone.id}/edit")
 
-    fill_in 'name', with: 'Keystone Resort'
-    fill_in 'lifts', with: '22'
-    fill_in 'employee', with: '2000'
-    fill_in 'altitude', with: '12_000'
-    fill_in 'avg_snowfall', with: '33'
-    fill_in 'Location', with: 'Frisco'
-    fill_in 'backcountry_access', with: 'true'
-    fill_in 'snowboarder_permitted', with: 'true'
+    fill_in 'ski_resort_name', with: 'Keystone Resort'
 
     click_on 'Update Ski Resort'
 

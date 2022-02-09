@@ -52,7 +52,7 @@ RSpec.describe 'ski run show' do
 
     expect(current_path).to eq("/ski_runs/#{noodle_soup.id}/edit")
 
-    fill_in 'name', with: 'Noodle'
+    fill_in 'ski_run_name', with: 'Noodle'
 
     click_on 'Update Ski Run'
 

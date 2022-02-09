@@ -1,4 +1,4 @@
-<%= form_with url: "/ski_resorts", method: :post, local: true do |form| %>
+<%= form_with url: "/ski_resorts", method: :post, local: true, model: @ski_resort do |form| %>
 
 <p><%= form.label :name %>
 <%= form.text_field :name %></p>
