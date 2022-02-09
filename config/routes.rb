@@ -7,6 +7,7 @@ Rails.application.routes.draw do
   patch '/ski_resorts/:id', to: 'ski_resorts#update'
   resources :ski_resorts
 
+  delete '/ski_runs/:id', to: 'ski_runs#destroy'
   get '/ski_runs', to: 'ski_runs#index'
   get '/ski_runs/:id', to: 'ski_runs#show'
   get '/ski_runs/:id/edit', to: 'ski_runs#edit'

@@ -18,6 +18,11 @@ class SkiRunsController < ApplicationController
     redirect_to "/ski_runs/#{ski_run.id}"
   end
 
+  def destroy
+    SkiRun.destroy(params[:id])
+    redirect_to '/ski_runs'
+  end
+
   private
 
   def ski_run_params
